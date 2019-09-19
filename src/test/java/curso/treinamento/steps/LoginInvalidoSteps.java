@@ -13,12 +13,6 @@ public class LoginInvalidoSteps {
 	
 	public WebDriver driver;
 	
-	@Dado("que eu esteja na tela de login")
-	public void que_eu_esteja_na_tela_de_login() {
-		System.setProperty("webdriver.chrome.driver", "src/test/resources/windows/chromedriver.exe");
-		driver = new ChromeDriver();	
-		driver.get("https://www.phptravels.net/admin");
-	}
 	
 	@Quando("tento fazer login com o usuario {string} e senha {string}")
 	public void faço_login_com_o_usuario_e_senha(String user, String pass) {		
