@@ -11,5 +11,5 @@ Funcionalidade: Login
   @LoginInvalido
 	Cenário: Tentativa de Login com email invalido
   	Dado que eu esteja na tela de login
-  	Quando tento fazer login com o usuario "teste" e senha "demoadmin"
+  	Quando faço login com o usuario "teste" e senha "demoadmin"
   	Então é apresentada a mensagem "The Email field must contain a valid email address."

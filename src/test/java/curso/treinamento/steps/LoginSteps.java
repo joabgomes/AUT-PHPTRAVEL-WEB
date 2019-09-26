@@ -1,6 +1,7 @@
 package curso.treinamento.steps;
 
 import org.junit.Assert;
+//import org.openqa.selenium.By;
 
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.Então;
@@ -31,7 +32,14 @@ public class LoginSteps {
 
 	@Então("sou autenticado com sucesso")
 	public void sou_autenticado_com_sucesso() throws InterruptedException {
-		
+	
 		Assert.assertTrue("Login não realizado com sucesso", homepage.validar_pagina());
+	}
+	
+	@Então("é apresentada a mensagem {string}")
+	public void é_apresentada_a_mensagem(String msg) {
+		String loginInvalido = loginPage.login_invalido();
+		Assert.assertEquals(msg, loginInvalido);
+
 	}
 }

@@ -18,7 +18,7 @@ public class HomePage {
 	private WebElement linkLogout;
 	
 	public Boolean validar_pagina() {
-		Helper.aguardar_elemento(1, linkLogout);
+		Helper.aguardar_elemento(10, linkLogout);
 		return linkLogout.isDisplayed();
 	}
 }

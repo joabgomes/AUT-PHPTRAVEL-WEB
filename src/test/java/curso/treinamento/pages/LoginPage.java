@@ -23,6 +23,11 @@ public class LoginPage {
 	@FindBy(xpath = "//span[text()='Login']")
 	private WebElement botaoLogin;
 	
+	@FindBy(xpath = "//p[contains(text(), 'The Email field must contain a valid email address.')]")
+	private WebElement msgErro;
+	
+	
+	
 	public void preencher_email(String email) {
 		campoEmail.sendKeys(email);
 	}	
@@ -39,4 +44,8 @@ public class LoginPage {
 		return botaoLogin.isDisplayed();
 	}
 	
+	public String login_invalido() {
+		Helper.aguardar_elemento(5, msgErro);
+		return msgErro.getText();
+	}
 }
