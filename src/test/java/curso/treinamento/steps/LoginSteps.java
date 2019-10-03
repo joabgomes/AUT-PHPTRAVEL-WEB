@@ -18,6 +18,8 @@ public class LoginSteps {
 	@Dado("que eu esteja na tela de login")
 	public void que_eu_deseje_logar_no_sistema() throws InterruptedException {
 		
+		loginPage.clicar_remove_frame();
+		
 		Assert.assertTrue("Página Login não apresentada", loginPage.validar_pagina());
 	}
 	
@@ -40,6 +42,7 @@ public class LoginSteps {
 	public void é_apresentada_a_mensagem(String msg) {
 		String loginInvalido = loginPage.login_invalido();
 		Assert.assertEquals(msg, loginInvalido);
-
+		
+		Assert.assertTrue("A mensagem " + msg + "Não foi apresentada.", loginPage.validar_mensagem_email_invalido() );
 	}
 }

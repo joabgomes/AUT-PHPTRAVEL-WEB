@@ -26,7 +26,16 @@ public class LoginPage {
 	@FindBy(xpath = "//p[contains(text(), 'The Email field must contain a valid email address.')]")
 	private WebElement msgErro;
 	
+	@FindBy(xpath = "//span[text()='Remove Frame']")
+	private WebElement linkRemoveFrame;
 	
+	@FindBy(xpath = "//p[text()='The Email field must contain a valid email address.']")
+	private WebElement msgEmailInvalido;
+			
+	public void clicar_remove_frame() {
+		if(Helper.elemento_existe(linkRemoveFrame, 10))
+			linkRemoveFrame.click();
+	}
 	
 	public void preencher_email(String email) {
 		campoEmail.sendKeys(email);
@@ -47,5 +56,9 @@ public class LoginPage {
 	public String login_invalido() {
 		Helper.aguardar_elemento(5, msgErro);
 		return msgErro.getText();
+	}
+	
+	public boolean validar_mensagem_email_invalido() {
+		return Helper.elemento_existe(msgEmailInvalido, 10);
 	}
 }
