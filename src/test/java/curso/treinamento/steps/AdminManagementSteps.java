@@ -1,8 +1,5 @@
 package curso.treinamento.steps;
 
-import java.util.List;
-import java.util.Map;
-
 import org.junit.Assert;
 
 import cucumber.api.java.pt.Dado;
