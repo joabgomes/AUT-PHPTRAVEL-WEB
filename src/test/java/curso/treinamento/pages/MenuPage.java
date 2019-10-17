@@ -19,10 +19,14 @@ public class MenuPage {
 	@FindBy(xpath = "//a[@href='#Cars']")
 	private WebElement menuCars;
 	
-	@FindBy(xpath = "//a[@href='ACCOUNTS']")
+	@FindBy(xpath = "//a[@href='#ACCOUNTS']")
 	private WebElement menuAccounts;
 	
-	
+	public void clicar_submenu(String menu, String subMenu) {
+		WebElement subMenu_ = Hooks.getDriver().findElement(By.xpath("//a[@href='#" + menu + "']/following::a[text()='"+ subMenu + "']"));
+		
+		subMenu_.click();
+	}
 	
 	public void clicar_menu_accounts() {
 		menuAccounts.click();

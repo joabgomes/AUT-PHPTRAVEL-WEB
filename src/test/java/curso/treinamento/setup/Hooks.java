@@ -23,6 +23,7 @@ public class Hooks {
 		
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.get(bundle.getString("env.url"));
+		driver.manage().window().maximize();
 	}
 	
 	@After

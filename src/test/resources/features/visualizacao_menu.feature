@@ -15,4 +15,6 @@ Funcionalidade: Visualização de Menu
   Cenário: Itens apresentados no menu Accounts
     Dado que eu esteja na tela Home
     Quando acesso o menu Accounts
-    Então são apresentados os itens "Admins", "Suppliers", "Customers" e "Guestcustomers"
+    Então são apresentados os itens "Admins", "Suppliers", "Customers" e "GuestCustomers"
+    
+    
