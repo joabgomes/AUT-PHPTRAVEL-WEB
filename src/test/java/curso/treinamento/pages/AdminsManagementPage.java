@@ -19,6 +19,7 @@ public class AdminsManagementPage {
 
 	@FindBy(xpath = "//div[text()='Admins Management']")
 	private WebElement tituloPagina;
+	
 
 	public Boolean validar_email_na_tabela(String email) {
 		WebElement valorEmail = Hooks.getDriver().findElement(By.xpath("//td//a[text()='" + email + "']"));
@@ -30,6 +31,8 @@ public class AdminsManagementPage {
 		// Helper.aguardar_elemento(10, tituloPagina);
 		// return tituloPagina.isDisplayed();
 	}
+	
+
 
 	public void clicar_btn_add() {
 		btnAdd.click();

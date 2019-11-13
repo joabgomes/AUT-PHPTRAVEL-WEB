@@ -22,6 +22,13 @@ public class MenuPage {
 	@FindBy(xpath = "//a[@href='#ACCOUNTS']")
 	private WebElement menuAccounts;
 	
+	
+	@FindBy(xpath = "//a[@href='#TravelhopeHotels']")
+	private WebElement menuTravelsHopeHotels;
+	
+	@FindBy(xpath = "//a[@href='#Tours']")
+	private WebElement menuTours;
+	
 	public void clicar_submenu(String menu, String subMenu) {
 		WebElement subMenu_ = Hooks.getDriver().findElement(By.xpath("//a[@href='#" + menu + "']/following::a[text()='"+ subMenu + "']"));
 		
@@ -36,11 +43,27 @@ public class MenuPage {
 		menuCars.click();
 	}
 	
+	public void clicar_menu_travels_hotels() {
+		menuTravelsHopeHotels.click();
+	}
+	
+	public void clicar_menu_tours() {
+		menuTours.click();
+	}
+	
 	public boolean validar_submenu_cars(String subMenu) {
 		return Helper.elemento_existe(Hooks.getDriver().findElement(By.xpath("//a[@href='#Cars']/following::a[text()='"+ subMenu + "']")),10);
 	}
 	
 	public boolean validar_submenu_accounts(String subMenuAccounts) {
 		return Helper.elemento_existe(Hooks.getDriver().findElement(By.xpath("//a[@href='#ACCOUNTS']/following::a[text()='"+ subMenuAccounts + "']")),10);
+	}
+	
+	public boolean validar_submenu_travels(String subMenuTravels) {
+		return Helper.elemento_existe(Hooks.getDriver().findElement(By.xpath("//a[@href='#TravelhopeHotels']/following::a[text()='"+ subMenuTravels + "']")),10);
+	}
+	
+	public boolean validar_submenu_tours(String subMenuTours) {
+		return Helper.elemento_existe(Hooks.getDriver().findElement(By.xpath("//a[@href='#Tours']/following::a[text()='"+ subMenuTours + "']")),10);
 	}
 }

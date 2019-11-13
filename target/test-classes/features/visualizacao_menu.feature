@@ -16,5 +16,15 @@ Funcionalidade: Visualização de Menu
     Dado que eu esteja na tela Home
     Quando acesso o menu Accounts
     Então são apresentados os itens "Admins", "Suppliers", "Customers" e "GuestCustomers"
-    
-    
+
+  @Travels
+  Cenário: Itens apresentados no menu Travelhope Hotels
+    Dado que eu esteja na tela Home
+    Quando acesso o menu Travelhope Hotels
+    Então são apresentados os itens "Bookings" e "Settings"
+
+  @Tours
+  Cenário: Itens apresentados no menu Tours
+    Dado que eu esteja na tela Home
+    Quando acesso o menu Tours
+    Então são apresentados os itens "Tours", "Add New", "Extras", "Reviews" e "Settings"

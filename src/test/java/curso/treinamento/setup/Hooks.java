@@ -9,6 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
+import curso.treinamento.utils.Helper;
 
 public class Hooks {
 	
@@ -21,13 +22,14 @@ public class Hooks {
 		System.setProperty("webdriver.chrome.driver", "src/test/resources/windows/chromedriver.exe");
 		driver = new ChromeDriver();
 		
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		driver.get(bundle.getString("env.url"));
 		driver.manage().window().maximize();
 	}
 	
 	@After
-	public void tearDown(Scenario scnario) {
+	public void tearDown(Scenario scenario) {
+		Helper.screenshot(scenario);
 		driver.close();
 	}
 	
